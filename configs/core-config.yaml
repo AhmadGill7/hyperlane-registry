@@ -12,15 +12,3 @@ requiredHook:
   owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
   protocolFee: "0"
   type: protocolFee
-
-# Chain-specific overrides (if needed)
-bsctestnet:
-  defaultIsm:
-    type: trustedRelayerIsm
-    relayer: "0x4f0b4c4c23E31f3e5bCCEfFb649AfdE964B7dF50" # Current BSC relayer
-
-# Chain-specific overrides (if needed)
-kasplextestnet:
-  defaultIsm:
-    type: trustedRelayerIsm
-    relayer: "0x4f0b4c4c23E31f3e5bCCEfFb649AfdE964B7dF50" # Current KASPLEX relayer
