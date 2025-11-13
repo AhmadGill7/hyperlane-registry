@@ -7814,6 +7814,25 @@ USDT/ethereum-viction:
       name: USDT
       standard: EvmHypSynthetic
       symbol: USDT
+USDT/igratestnet:
+  tokens:
+    - addressOrDenom: "0xB818e552a79BaCfd91f702e93b34DD696Ac470aF"
+      chainName: igratestnet
+      connections:
+        - token: ethereum|bsctestnet|0x11a41b2A1a050AD0c064B928EE22B44cD043622a
+      decimals: 18
+      name: USDT
+      standard: EvmHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0x11a41b2A1a050AD0c064B928EE22B44cD043622a"
+      chainName: bsctestnet
+      collateralAddressOrDenom: "0x0653374bEF3656e1b42f1B4F00ED86d4013D8712"
+      connections:
+        - token: ethereum|igratestnet|0xB818e552a79BaCfd91f702e93b34DD696Ac470aF
+      decimals: 18
+      name: USDT
+      standard: EvmHypCollateral
+      symbol: USDT
 USDT/incentiv:
   tokens:
     - addressOrDenom: "0x7a1E026306164e22e0746D0097B92AFcfcc45BA6"
