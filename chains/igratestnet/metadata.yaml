@@ -1,8 +1,7 @@
-# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://explorer.caravel.igralabs.com/api
     family: blockscout
-    name: Igra Tesetnet Explorer
+    name: Igra testnet explorer
     url: https://explorer.caravel.igralabs.com/
 chainId: 19416
 displayName: Igra Testnet
@@ -11,11 +10,11 @@ isTestnet: true
 name: igratestnet
 nativeToken:
   decimals: 18
-  name: iKASPA
+  name: KASPA
   symbol: iKAS
 protocol: ethereum
 rpcUrls:
-  - http: https://caravel.igralabs.com:8545/
+  - http: https://caravel.igralabs.com:8545
 technicalStack: other
 transactionOverrides:
   maxFeePerGas: 2000000000000
