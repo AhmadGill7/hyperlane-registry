@@ -3608,7 +3608,7 @@ igratestnet:
       name: Igra Tesetnet Explorer
       url: https://explorer.caravel.igralabs.com/
   chainId: 19416
-  displayName: Igra Caravel Testnet
+  displayName: Igra Testnet
   domainId: 19416
   isTestnet: true
   name: igratestnet
