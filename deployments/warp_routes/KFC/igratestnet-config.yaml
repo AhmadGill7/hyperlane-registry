@@ -1,0 +1,18 @@
+    tokens:
+      - chainName: kasplextestnet
+        standard: EvmHypCollateral
+        decimals: 18
+        symbol: KFC
+        name: Kaspa Finance
+        addressOrDenom: "0x314EFB443c007B98aef8b04322C82B3f2b87DceD"
+        collateralAddressOrDenom: "0xf87e587AB945F7B111329a6ace6dc497D34f098B"
+        connections:
+          - token: ethereum|igratestnet|0xd20D894FBB9701317c3fef4fF1A677d8bdBdf153
+      - chainName: igratestnet
+        standard: EvmHypSynthetic
+        decimals: 18
+        symbol: KFC
+        name: Kaspa Finance
+        addressOrDenom: "0xd20D894FBB9701317c3fef4fF1A677d8bdBdf153"
+        connections:
+          - token: ethereum|kasplextestnet|0x314EFB443c007B98aef8b04322C82B3f2b87DceD
