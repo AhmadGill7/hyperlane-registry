@@ -14,7 +14,7 @@
       proxyAdmin:
         owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
         address: "0x3A3E7e4A1adF8c7A5a9EE5fDb617E5db55643B46"
-    igratestnet:
+   igratestnet:
       isNft: false
       type: synthetic
       owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
