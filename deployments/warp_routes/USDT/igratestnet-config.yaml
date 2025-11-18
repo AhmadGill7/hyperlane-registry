@@ -1,0 +1,18 @@
+tokens:
+  - chainName: igratestnet
+    standard: EvmHypSynthetic
+    decimals: 18
+    symbol: USDT
+    name: USDT
+    addressOrDenom: "0xB818e552a79BaCfd91f702e93b34DD696Ac470aF"
+    connections:
+      - token: ethereum|bsctestnet|0x11a41b2A1a050AD0c064B928EE22B44cD043622a
+  - chainName: bsctestnet
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: USDT
+    name: USDT
+    addressOrDenom: "0x11a41b2A1a050AD0c064B928EE22B44cD043622a"
+    collateralAddressOrDenom: "0x0653374bEF3656e1b42f1B4F00ED86d4013D8712"
+    connections:
+      - token: ethereum|igratestnet|0xB818e552a79BaCfd91f702e93b34DD696Ac470aF
