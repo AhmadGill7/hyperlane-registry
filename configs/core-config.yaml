@@ -1,14 +1,113 @@
-defaultHook:
-  type: merkleTreeHook
-defaultIsm:
-  relayer: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
-  type: trustedRelayerIsm
-owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
+owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+
 proxyAdmin:
-  owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
+  owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+
+defaultIsm:
+  type: aggregation
+  threshold: 2
+  modules:
+    - type: routingIsm
+      owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+      domains:
+        arbitrumsepolia:
+          type: aggregation
+          threshold: 1
+          modules:
+            - type: messageIdMultisig
+              threshold: 1
+              validators:
+                - "0x09fabfbca0b8bf042e2a1161ee5010d147b0f603"
+            - type: merkleRootMultisig
+              threshold: 1
+              validators:
+                - "0x09fabfbca0b8bf042e2a1161ee5010d147b0f603"
+        basesepolia:
+          type: aggregation
+          threshold: 1
+          modules:
+            - type: messageIdMultisig
+              threshold: 1
+              validators:
+                - "0x82e3b437a2944e3ff00258c93e72cd1ba5e0e921"
+            - type: merkleRootMultisig
+              threshold: 1
+              validators:
+                - "0x82e3b437a2944e3ff00258c93e72cd1ba5e0e921"
+        optimismsepolia:
+          type: aggregation
+          threshold: 1
+          modules:
+            - type: messageIdMultisig
+              threshold: 1
+              validators:
+                - "0x03efe4d0632ee15685d7e8f46dea0a874304aa29"
+            - type: merkleRootMultisig
+              threshold: 1
+              validators:
+                - "0x03efe4d0632ee15685d7e8f46dea0a874304aa29"
+        sepolia:
+          type: aggregation
+          threshold: 1
+          modules:
+            - type: messageIdMultisig
+              threshold: 2
+              validators:
+                - "0xb22b65f202558adf86a8bb2847b76ae1036686a5"
+                - "0x469f0940684d147defc44f3647146cb90dd0bc8e"
+                - "0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83"
+            - type: merkleRootMultisig
+              threshold: 2
+              validators:
+                - "0xb22b65f202558adf86a8bb2847b76ae1036686a5"
+                - "0x469f0940684d147defc44f3647146cb90dd0bc8e"
+                - "0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83"
+    - type: pausable
+      owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+      paused: false
+
+defaultHook:
+  type: fallbackRouting
+  owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+  domains:
+    arbitrumsepolia: &aggHook
+      type: aggregationHook
+      hooks:
+        - type: pausable
+          owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+          paused: false
+        - type: merkleTreeHook
+        - type: interchainGasPaymaster
+          owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+          beneficiary: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+          oracleKey: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+          overhead:
+            arbitrumsepolia: 350000
+            basesepolia: 350000
+            optimismsepolia: 350000
+            sepolia: 350000
+          oracleConfig:
+            arbitrumsepolia:
+              gasPrice: "100000000" # 0.1 gwei
+              tokenExchangeRate: "1000000000000000000"
+            basesepolia:
+              gasPrice: "1000000" # 0.001 gwei
+              tokenExchangeRate: "1000000000000000000"
+            optimismsepolia:
+              gasPrice: "1000000"
+              tokenExchangeRate: "1000000000000000000"
+            sepolia:
+              gasPrice: "50000000" # 0.05 gwei
+              tokenExchangeRate: "1000000000000000000"
+    basesepolia: *aggHook
+    optimismsepolia: *aggHook
+    sepolia: *aggHook
+  fallback:
+    type: merkleTreeHook
+
 requiredHook:
-  beneficiary: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
-  maxProtocolFee: "100000000000000000"
-  owner: "0x1900c5B15268F13BB4e462f54F5EDD6834C47348"
-  protocolFee: "0"
   type: protocolFee
+  maxProtocolFee: "1000000000" # 1 gwei
+  protocolFee: "0"
+  beneficiary: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
+  owner: "0x1900c5b15268f13bb4e462f54f5edd6834c47348"
