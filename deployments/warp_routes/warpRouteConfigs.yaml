@@ -1,0 +1,20 @@
+# AUTO-GENERATED; DO NOT EDIT MANUALLY
+KFC/igratestnet:
+  tokens:
+    - addressOrDenom: "0x314EFB443c007B98aef8b04322C82B3f2b87DceD"
+      chainName: kasplextestnet
+      collateralAddressOrDenom: "0xf87e587AB945F7B111329a6ace6dc497D34f098B"
+      connections:
+        - token: ethereum|igratestnet|0xd20D894FBB9701317c3fef4fF1A677d8bdBdf153
+      decimals: 18
+      name: Kaspa Finance
+      standard: EvmHypCollateral
+      symbol: KFC
+    - addressOrDenom: "0xd20D894FBB9701317c3fef4fF1A677d8bdBdf153"
+      chainName: igratestnet
+      connections:
+        - token: ethereum|kasplextestnet|0x314EFB443c007B98aef8b04322C82B3f2b87DceD
+      decimals: 18
+      name: Kaspa Finance
+      standard: EvmHypSynthetic
+      symbol: KFC
